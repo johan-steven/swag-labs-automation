@@ -34,4 +34,8 @@ class BasePage:
     
     def is_element_visible(self, locator):
         """Check if an element is visible on the page"""
-        WebDriverWait(self.driver, self.timeout).until(EC.visibility_of_element_located(locator))
+        try:
+            WebDriverWait(self.driver, 2).until(EC.visibility_of_element_located(locator))
+            return True
+        except:
+            return False
