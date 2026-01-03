@@ -15,7 +15,7 @@ class InventoryPage(BasePage):
     
     def add_to_cart_by_name(self, item_name):
         """The item name is formatted and the specific button for the item is clicked."""
-        formatted_name = item_name.lower().replace(" ", "-")
+        formatted_name = item_name.strip().lower().replace(" ", "-")
         button_id = f"add-to-cart-{formatted_name}"
 
         add_button = (By.ID, button_id)
